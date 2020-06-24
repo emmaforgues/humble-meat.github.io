@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Ambiant';
+  src: url("Ambiant-Light.woff");
+}
+
+.playposition{
+  position: absolute;
+  left: 48%;
+  right: 50%;
+  padding-top: 75px;
+}
+
+.mainlogo{
+  left: 50%;
+  right: 50%;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.mainlogo img{
+  width: 450px;
+  height: auto;
+}
+
+.about{
+  position: absolute;
+  left: 49%;
+  right: 50%;
+  top:80%;
+  padding-top: 70px;
+  margin-left: -5px;
+}
+
+.about img{
+  width: 25px;
+  height: auto;
+}
+
+#pButton{
+    height:60px;
+    width: 60px;
+    border: none;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+    color: #0011ff
+}
+
+.play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
+.pause{background: url('./media/rest.png') ;}

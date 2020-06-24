@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="styleabout.css" type="text/css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+
+      <div class="playposition">
+      <audio id="music" preload="true">
+        <source src="./media/08 Shikorina (Zilla Remix).mp3">
+                  <source src="./media/08 Shikorina (Zilla Remix).ogg">
+          </audio>
+      <div id="audioplayer">
+          <button id="pButton" class="play"></button>
+        <div id="timeline">
+                <div id="playhead"></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="line">
+        <img src="./media/line.png" alt="line">
+      </div>
+
+      <div class="aboutleft">
+        <p><i>A Body Made of Humble Meat</i>  is a communal mix project where ;</p>
+        <p>each month <br>
+          a different artist is invited <br>
+          to leave a trace on a pre-existing mix <br>
+          this trace can be additive or subtractive :  <br>
+          a single “idea”<br>
+          in any shape or form, <br>
+          creating an ever-evolving <br>
+          amorphous body of sound <br>
+          instilled with imprints of artists <br>
+          whom we love.</p>
+      </div>
+
+      <div class="aboutright">
+        <p><i>Golpesar<br>
+          Racine</i><br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          . <br>
+          .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      .      . are <i>A Body Made of Humble Meat</i><br>
+          whom we love.</p>
+      </div>
+
+      <div class="about">
+      <a href="index"><img src="./media/gotoindex.png" alt="index"></a>
+      </div>
+
+      <script>
+      var music = document.getElementById('music'); // id for audio element
+      var duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
+      var pButton = document.getElementById('pButton'); // play button
+      var playhead = document.getElementById('playhead'); // playhead
+      var timeline = document.getElementById('timeline'); // timeline
+
+      // timeline width adjusted for playhead
+      var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+      // play button event listenter
+      pButton.addEventListener("click", play);
+
+      // timeupdate event listener
+      music.addEventListener("timeupdate", timeUpdate, false);
+
+      // makes timeline clickable
+      timeline.addEventListener("click", function(event) {
+          moveplayhead(event);
+          music.currentTime = duration * clickPercent(event);
+      }, false);
+
+      // returns click as decimal (.77) of the total timelineWidth
+      function clickPercent(event) {
+          return (event.clientX - getPosition(timeline)) / timelineWidth;
+      }
+
+      // makes playhead draggable
+      playhead.addEventListener('mousedown', mouseDown, false);
+      window.addEventListener('mouseup', mouseUp, false);
+
+      // Boolean value so that audio position is updated only when the playhead is released
+      var onplayhead = false;
+
+      // mouseDown EventListener
+      function mouseDown() {
+          onplayhead = true;
+          window.addEventListener('mousemove', moveplayhead, true);
+          music.removeEventListener('timeupdate', timeUpdate, false);
+      }
+
+      // mouseUp EventListener
+      // getting input from all mouse clicks
+      function mouseUp(event) {
+          if (onplayhead == true) {
+              moveplayhead(event);
+              window.removeEventListener('mousemove', moveplayhead, true);
+              // change current time
+              music.currentTime = duration * clickPercent(event);
+              music.addEventListener('timeupdate', timeUpdate, false);
+          }
+          onplayhead = false;
+      }
+      // mousemove EventListener
+      // Moves playhead as user drags
+      function moveplayhead(event) {
+          var newMargLeft = event.clientX - getPosition(timeline);
+
+          if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+              playhead.style.marginLeft = newMargLeft + "px";
+          }
+          if (newMargLeft < 0) {
+              playhead.style.marginLeft = "0px";
+          }
+          if (newMargLeft > timelineWidth) {
+              playhead.style.marginLeft = timelineWidth + "px";
+          }
+      }
+
+      // timeUpdate
+      // Synchronizes playhead position with current point in audio
+      function timeUpdate() {
+          var playPercent = timelineWidth * (music.currentTime / duration);
+          playhead.style.marginLeft = playPercent + "px";
+          if (music.currentTime == duration) {
+              pButton.className = "";
+              pButton.className = "play";
+          }
+      }
+
+      //Play and Pause
+      function play() {
+          // start music
+          if (music.paused) {
+              music.play();
+              // remove play, add pause
+              pButton.className = "";
+              pButton.className = "pause";
+          } else { // pause music
+              music.pause();
+              // remove pause, add play
+              pButton.className = "";
+              pButton.className = "play";
+          }
+      }
+
+      // Gets audio file duration
+      music.addEventListener("canplaythrough", function() {
+          duration = music.duration;
+      }, false);
+
+      // getPosition
+      // Returns elements left position relative to top-left of viewport
+      function getPosition(el) {
+          return el.getBoundingClientRect().left;
+      }
+      </script>
+
+    </body>
+
+</html>
