@@ -11,6 +11,9 @@
 }
 
 .line{
+  /* background: url('./media/line.png'); */
+  width: 140px;
+  height: auto;
   position: absolute;
   left: 45%;
   right: 50%;
