@@ -26,6 +26,10 @@
   height: auto;
 }
 
+  .mobileline{
+    display: none;
+  }
+
 .aboutleft{
   position: absolute;
   left: 45%;
@@ -85,7 +89,8 @@ p{
 
   p{
     font-family: "Ambiant";
-    font-size: 75%;
+    font-size: 80%;
+    font-weight: bolder;
     text-align: left;
   }
 
@@ -105,24 +110,39 @@ p{
     left: 25%;
     right: 50%;
     padding-top: 0px;
-    top: 30%;
+    top: 35%;
   }
 
   .about{
     position: absolute;
-    left: 60%;
-    /* right: 50%; */
-    top:45%;
+    left: 64%;
+    top:50%;
     padding-top: 0px;
     margin-left: 0px;
+  }
+
+  .line{
+    display: none;
+  }
+
+  .mobileline{
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left:12%;
+  }
+
+  .mobileline img{
+    width: 300px;
+    height: auto;
   }
 
   .aboutright{
     position: absolute;
     width: 100%;
     left: 5%;
-    top: none;
-    bottom:0;
+    top: 62%;
+    /* bottom:-10%; */
     transform: translate(0%, 0%);
     height: auto;
     text-align: left;
