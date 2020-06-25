@@ -4,11 +4,30 @@
 }
 
 .playposition{
+  z-index: 1;
   position: absolute;
   left: 48%;
   right: 50%;
   padding-top: 75px;
 }
+
+#pButton{
+    display: inline-block;
+    cursor: pointer;
+    cursor: hand;
+    height:60px;
+    width: 60px;
+    border: none;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+    color: #0011ff
+}
+
+.play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
+.pause{background: url('./media/rest.png') ;}
 
 .line{
   /* background: url('./media/line.png'); */
@@ -32,7 +51,7 @@
 
 .aboutleft{
   position: absolute;
-  left: 45%;
+  left: 40%;
   top: 55%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -43,7 +62,7 @@
 
 .aboutright{
   position: absolute;
-  left: 73.5%;
+  left: 77%;
   top: 55%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -70,21 +89,6 @@ p{
   /* height: auto; */
 }
 
-#pButton{
-    height:60px;
-    width: 60px;
-    border: none;
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    float:left;
-    outline:none;
-    color: #0011ff
-}
-
-.play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
-.pause{background: url('./media/rest.png') ;}
-
 @media screen and (max-width: 767.98px) {
 
   p{
@@ -110,13 +114,13 @@ p{
     left: 25%;
     right: 50%;
     padding-top: 0px;
-    top: 32%;
+    top: 33%;
   }
 
   .about{
     position: absolute;
-    left: 64%;
-    top:48%;
+    left: 67%;
+    top:49%;
     padding-top: 0px;
     margin-left: 0px;
   }
@@ -128,13 +132,13 @@ p{
   .mobileline{
     display: block;
     position: absolute;
-    text-align: center;
-    top: 28%;
-    left:12%;
+    text-align: left;
+    top: 35%;
+    left: 26%;
   }
 
   .mobileline img{
-    width: 300px;
+    width: 200px;
     height: auto;
   }
 
