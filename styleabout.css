@@ -15,8 +15,8 @@
     display: inline-block;
     cursor: pointer;
     cursor: hand;
-    height:60px;
-    width: 60px;
+    /* height:43px;
+    width: 50px; */
     border: none;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -28,6 +28,17 @@
 
 .play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
 .pause{background: url('./media/rest.png') ;}
+
+.play{
+  height:43px;
+  width: 50px;
+}
+
+.pause {
+  margin-top: -15px;
+  width:47px;
+  height: 77px;
+}
 
 .line{
   width: 140px;
@@ -88,8 +99,7 @@ p{
 }
 
 .about img{
-  width: 35px;
-  /* height: auto; */
+  width: 26px;
 }
 
 @media screen and (max-width: 1025px) {
