@@ -12,7 +12,7 @@
 
 .mainlogo{
   position: absolute;
-  top:50%;
+  top:48%;
   left:50%;
   transform: translate(-50%, -50%);
   /* right: 50%; */
@@ -21,7 +21,7 @@
 }
 
 .mainlogo img{
-  width: 380px;
+  width: 355px;
   height: auto;
 }
 
@@ -42,6 +42,8 @@
 #pButton{
     /* height:50px;
     width: 50px; */
+    cursor: pointer;
+    cursor: hand;
     border: none;
     background-size: 50% 50%;
     background-repeat: no-repeat;
@@ -74,7 +76,7 @@
   }
 
   .mainlogo{
-    top:50%;
+    top:46%;
     left:52%;
     transform: translate(-50%, -50%);
   }

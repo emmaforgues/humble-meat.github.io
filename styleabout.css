@@ -107,7 +107,6 @@ p{
   p{
     font-family: "Ambiant";
     font-size: 105%;
-    /* font-weight: bolder; */
   }
 
   .aboutleft{
@@ -175,10 +174,10 @@ p{
 
   .playposition{
     position: absolute;
-    left: 20%;
+    left: 22%;
     right: 50%;
     padding-top: 0px;
-    top: 42%;
+    top: 46%;
   }
 
   .about{
@@ -187,6 +186,10 @@ p{
     top:59%;
     padding-top: 0px;
     margin-left: 0px;
+  }
+
+  .about img{
+    width: 23px;
   }
 
   .line{
@@ -230,4 +233,17 @@ p{
     text-align: left;
 
   }
+
+  .play{
+    /* margin-top: -25px; */
+    height:35px;
+    width: 42px;
+  }
+
+  .pause {
+    /* margin-top: -40px; */
+    width:40px;
+    height: 70px;
+  }
+
 }
