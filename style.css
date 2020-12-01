@@ -53,12 +53,12 @@
     color: #0011ff
 }
 
-.play{background: url('http://www.alexkatz.me/codepen/img/play.png') ;}
+.play{background: url('./media/humble-meat_play.png') ;}
 .pause{background: url('./media/rest.png') ;}
 
 .play{
   height:43px;
-  width: 50px;
+  width: 40px;
 }
 
 .pause {
